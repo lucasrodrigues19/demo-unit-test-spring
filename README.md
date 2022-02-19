@@ -17,13 +17,13 @@ Considerando Que vamos Testar um **[Repository](https://docs.spring.io/spring-da
 ## 2 - Testes com a Classe de serviço
 Considerando Que vamos Testar uma classe de serviço e classe tenho dependencias que precisam serem instanciadas para que eu possa realizar os testes. Com isso devemos nos atentar as Seguintes anotações:
  - **[@InjectMocks](https://javadoc.io/doc/org.mockito/mockito-core/1.9.5/org/mockito/InjectMocks.html)**
-    - Ultiliza quando quero testar a classe em si. Vou fazer uma inejão(instancia) mocada, e injeta os mocks que são criados com as anotações @Mock
+    - Ultiliza quando quero testar a classe em si. Vou fazer uma injeção(instancia) mocada, e injeta os mocks que são criados com as anotações @Mock
 
 - **[@Mock](https://javadoc.io/doc/org.mockito/mockito-core/1.9.5/org/mockito/InjectMocks.html)** 
     - Ultilizo para que eu possa usar alguma dependencia que está sendo ultilizada na classe, vou criar um comportamento mocado.
 
 - **[@SpringBootTest](https://spring.io/guides/gs/testing-web/)**
-    - Tenta executar o contexto, vai inicializar a apliação.
+    - Tenta executar o contexto, vai inicializar a aplicação.
 
 - **[@ExtendWith(SpringExtension.class)](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/test/context/junit/jupiter/SpringExtension.html)**
      - Ultiliza spring com junit, o contexto não é totalmente inicializado
@@ -45,7 +45,7 @@ Considerando Que vamos Testar uma classe de serviço e classe tenho dependencias
 Aqui, algumas anotações ultilizadas para testes de integração:
 
 - **[@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)](https://spring.io/guides/gs/testing-web/)**
-  -  Quando é intrgração preciso que inicie toda a aplicação, executando em uma porta aleatoria
+  -  Quando é intergração preciso que inicie toda a aplicação, executando em uma porta aleatoria
 - **[@AutoConfigureTestDatabase](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/autoconfigure/jdbc/AutoConfigureTestDatabase.html)** 
   - Configuração de banco de dados ultilizara o valor que tem em memoria 
 - **[@TestConfiguration](https://docs.spring.io/spring-boot/docs/current/api/org/springframework/boot/test/context/TestConfiguration.html)**
