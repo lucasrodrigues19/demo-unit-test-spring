@@ -1,4 +1,4 @@
-package com.lucasrodrigues.tubi.domains;
+package com.lucasrodrigues.tubi.entitys;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,15 +12,21 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.lucasrodrigues.tubi.domains.main.MainEntity;
+import com.lucasrodrigues.tubi.entitys.main.MainEntity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
+/**
+ * @author Lucas Rodrigues
+ * @since 2022/02/17
+ */
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "tbuser")
+@SuperBuilder
 public class User extends MainEntity implements UserDetails{
 	
 	private static final long serialVersionUID = 1L;
@@ -28,8 +34,8 @@ public class User extends MainEntity implements UserDetails{
 	@Column(name = "username",nullable = false)
 	private String username;
 	
-	@Column(name = "passowrd",nullable = false)
-	private String passowrd;
+	@Column(name = "password",nullable = false)
+	private String password;
 	
 	@Column(name = "authorities",nullable = false)
 	private String authorities;
@@ -40,7 +46,7 @@ public class User extends MainEntity implements UserDetails{
 
 	@Override
 	public String getPassword() {
-		return this.passowrd;
+		return this.password;
 	}
 
 	@Override

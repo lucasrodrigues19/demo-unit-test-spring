@@ -1,4 +1,4 @@
-package com.lucasrodrigues.tubi.domains.main;
+package com.lucasrodrigues.tubi.entitys.main;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -17,6 +17,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
+/**
+ * @author Lucas Rodrigues
+ * @since 2022/02/17
+ */
 @SuperBuilder
 @MappedSuperclass
 @Getter
@@ -37,5 +41,6 @@ public abstract class MainEntity implements Serializable{
 	@Column(nullable = false)
 	private LocalDateTime dtInsert;
 	
+	@Column(nullable = false)
 	private LocalDateTime dtUpdate;
 }
